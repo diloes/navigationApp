@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack'
 import { styles } from '../theme/appTheme'
 
@@ -13,7 +13,36 @@ export const Pagina1Screen = ({ navigation }: Props) => {
 
       <Button title='Ir página 2' onPress={() => navigation.navigate('Pagina2Screen')} />
 
-      <Button title='Ir persona' onPress={() => navigation.navigate('PersonaScreen')} />
+      <Text style={{ color: 'black' }}>Navegar con argumentos</Text>
+
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity
+          style={{
+            ...styles.botonGrande,
+            backgroundColor: '#5856d6'
+          }}
+          onPress={() => navigation.navigate('PersonaScreen', {
+            id: 1,
+            nombre: 'Diego'
+          })}
+        >
+          <Text style={styles.botonGrandeTexto}>Diego</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={{
+            ...styles.botonGrande,
+            backgroundColor: '#ff9427'
+          }}
+          onPress={() => navigation.navigate('PersonaScreen', {
+            id: 2,
+            nombre: 'Rocío'
+          })}
+        >
+          <Text style={styles.botonGrandeTexto}>Rocío</Text>
+        </TouchableOpacity>
+      </View>
+
     </View>
   )
 }
