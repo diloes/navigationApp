@@ -13,9 +13,9 @@ export const Pagina1Screen = ({ navigation }: Props) => {
 
       <Button title='Ir página 2' onPress={() => navigation.navigate('Pagina2Screen')} />
 
-      <Text style={{ color: 'black' }}>Navegar con argumentos</Text>
+      <Text style={{ color: 'black', fontSize: 20 }}>Navegar con argumentos</Text>
 
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', marginTop: 20 }}>
         <TouchableOpacity
           style={{
             ...styles.botonGrande,
