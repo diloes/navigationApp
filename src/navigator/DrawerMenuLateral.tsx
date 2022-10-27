@@ -1,7 +1,8 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { StackNavigator } from './StackNavigator'
 import { SettingsScreen } from '../screens/SettingsScreen'
-import { Tabs } from './Tabs'
+import { Tabs } from './BottomTabsNavigator'
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
 import { styles } from '../theme/appTheme'
 
@@ -42,11 +43,19 @@ const CustomDrawerContent = ({ navigation }: DrawerContentComponentProps) => {
       {/* Opciones del menú */}
       <View style={styles.menuContainer}>
 
-        <TouchableOpacity onPress={() => navigation.navigate('StackNavigator')} style={styles.menuBtn}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('StackNavigator')}
+          style={{ ...styles.menuBtn, flexDirection: 'row', alignItems: 'center' }}
+        >
+          <Icon name={'basketball-outline'} size={20} color={'blue'} />
           <Text style={styles.menuText}>Navegación</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('SettingsScreen')} style={styles.menuBtn}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SettingsScreen')}
+          style={{ ...styles.menuBtn, flexDirection: 'row', alignItems: 'center' }}
+        >
+          <Icon name={'cog-outline'} size={20} color={'blue'} />
           <Text style={styles.menuText}>Ajustes</Text>
         </TouchableOpacity>
 
