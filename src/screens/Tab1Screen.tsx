@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 import { Text, View } from 'react-native'
 import { styles, colors } from '../theme/appTheme';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 
 export const Tab1Screen = () => {
@@ -16,10 +17,10 @@ export const Tab1Screen = () => {
       <Text style={styles.title}>Tab1Screen</Text>
 
       <Text>
-        <Icon name="airplane-outline" size={80} color={colors.primary} />
-        <Icon name="american-football-outline" size={80} color={colors.primary} />
-        <Icon name="camera-outline" size={80} color={colors.primary} />
-        <Icon name="images-outline" size={80} color={colors.primary} />
+        <TouchableIcon iconName="airplane-outline" />
+        <TouchableIcon iconName="american-football-outline" />
+        <TouchableIcon iconName="camera-outline" />
+        <TouchableIcon iconName="images-outline" />
       </Text>
     </View>
   )
